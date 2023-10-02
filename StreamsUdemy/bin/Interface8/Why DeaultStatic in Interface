@@ -1,0 +1,54 @@
+Previously In an Interface we had Abstract methods only and the Class implementing the abstract Method had to implement the logic for the abstract 
+method of the Interface.
+
+Now the drawback because of this was when ever we added any new Method in the Interface,we had to add that implementation of the newly added 
+method in the classes that were extending it,otherwise it would throw an compilation issue.
+
+It was an huge issue for the Library Creators and Updating those Library was an Huge issue.
+
+
+So What we did was we introduced Default Method!
+
+Now by the Introduction of the Default Method we now have the priviledge to add a method with Implementation in the Interface.
+Prior to Java 8, interfaces in Java could only declare method signatures (method names and parameter lists) but not provide any 
+method implementations. Default methods allow interfaces to provide method implementations.
+
+
+
+When you add a new method to an interface, all classes that implement that interface must provide an implementation for the new method. 
+This can be problematic when you have a large number of existing implementations. Default methods solve this problem by providing a default 
+implementation that can be used if a class implementing the interface doesn't override the default method.
+
+
+To define a default method in an interface, you use the default keyword before the method signature:
+
+interface MyInterface {
+    void regularMethod(); // Regular abstract method
+
+    default void defaultMethod() {
+        // Default implementation
+    }
+}
+
+
+Classes that implement the interface can choose to override the default method with their own implementation.
+ If they do, the class's implementation takes precedence over the default one.
+ 
+ class MyClass implements MyInterface {
+    @Override
+    public void regularMethod() {
+        // Implementation for regularMethod
+    }
+
+    // Override the default method
+    @Override
+    public void defaultMethod() {
+        // Custom implementation for defaultMethod
+    }
+}
+ 
+ 
+ 
+ For Further Implementation Stay Tuned With the Code....
+ 
+ ADIOS AMIGOS!!!!!!!!!!!!!!!!!
